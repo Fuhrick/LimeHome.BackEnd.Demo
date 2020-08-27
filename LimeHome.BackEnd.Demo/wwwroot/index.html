@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hotels</title>
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <h1>Hotels</h1>
+    <form action="javascript:void(0);" method="GET" onsubmit="getProperties()">
+        <input type="text" id="get-properties-latitude" placeholder="latitude">
+        <input type="text" id="get-properties-longitude" placeholder="longitude">
+        <input type="submit" value="Find">
+</form>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+    </tr>
+    <tbody id="todos"></tbody>
+</table>
+
+    <h3>Add</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+        <input type="text" id="add-first-name" placeholder="First Name">
+        <input type="text" id="add-last-name" placeholder="Last Name">
+        <input type="text" id="add-hotel-id" placeholder="Hotel Id">
+        <label for="add-from-date">From date:</label>
+        <input type="date" id="add-from-date" name="trip-start">
+        <label for="add-to-date">To date:</label>
+        <input type="date" id="add-to-date" name="trip-finish">
+        <input type="submit" value="Add">
+    </form>
+    
+<form action="javascript:void(0);" method="GET" onsubmit="getBookings()">
+    <input type="text" id="get-bookings-hotel-id" placeholder="Hotel id">
+    <input type="submit" value="Find">
+</form>
+
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Hotel Id</th>
+        <th>From Date</th>
+        <th>To Date</th>
+    </tr>
+    <tbody id="bookings"></tbody>
+</table>
+
+
+    <script src="js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getItems();
+    </script>
+</body>
+</html>
